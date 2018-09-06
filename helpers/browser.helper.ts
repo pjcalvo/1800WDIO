@@ -10,7 +10,7 @@ class Browser_Helper {
         try{
             selector1.click();
         }
-        catch(error){
+        catch{
             selector2.click();
         }
     }

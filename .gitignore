@@ -64,3 +64,5 @@ typings/
 report.json
 mochawesome-report/
 errorShots/
+
+src/

@@ -1,52 +1,38 @@
+
+var username = 'awan@1800contacts.com';
+var authkey = 'u0e2547396b64173';
+
 exports.config = {
-    
-    //
-    // ==================
-    // Specify Test Files
-    // ==================
-    // Define which test specs should run. The pattern is relative to the directory
-    // from which `wdio` was called. Notice that, if you are calling `wdio` from an
-    // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
-    // directory is where your package.json resides, so `wdio` will be called from there.
-    //
+
+    host: 'hub.crossbrowsertesting.com',
+    port: 80,
+    user: username,
+    key: authkey,
+    maxInstances :3,
     specs: [
         './src/specs/**/*.js'
     ],
-    // Patterns to exclude.
-    exclude: [
-        // 'path/to/excluded/files'
+    maxInstances: 3,
+    
+    capabilities: [
+        {
+            'browserName':'Chrome',
+            'version':'68x64',
+            'platform':'WIndows 10',
+            'screenResolution':'1366x768',
+            'recordVideo': 'true',
+            'name': 'WDIO - Chrome Test'
+        },
+       {
+            'browserName':'Safari',
+            'deviceName':'iPhone 7 Simulator',
+            'platformVersion':'10.0',
+            'platformName': 'iOS',
+            'deviceOrientation':'portrait',
+            'recordVideo': 'true',
+            'name': 'WDIO - iPhone Test'
+       } 
     ],
-    //
-    // ============
-    // Capabilities
-    // ============
-    // Define your capabilities here. WebdriverIO can run multiple capabilities at the same
-    // time. Depending on the number of capabilities, WebdriverIO launches several test
-    // sessions. Within your capabilities you can overwrite the spec and exclude options in
-    // order to group specific specs to a specific capability.
-    //
-    // First, you can define how many instances should be started at the same time. Let's
-    // say you have 3 different capabilities (Chrome, Firefox, and Safari) and you have
-    // set maxInstances to 1; wdio will spawn 3 processes. Therefore, if you have 10 spec
-    // files and you set maxInstances to 10, all spec files will get tested at the same time
-    // and 30 processes will get spawned. The property handles how many capabilities
-    // from the same test should run tests.
-    //
-    maxInstances: 10,
-    //
-    // If you have trouble getting all important capabilities together, check out the
-    // Sauce Labs platform configurator - a great tool to configure your capabilities:
-    // https://docs.saucelabs.com/reference/platforms-configurator
-    //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 5,
-        //
-        browserName: 'chrome',
-
-    }],
     //
     // ===================
     // Test Configurations
@@ -59,7 +45,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'command',
+    logLevel: 'verbose',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -112,7 +98,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    services: [],
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -197,15 +183,6 @@ exports.config = {
      */
      beforeHook: function () {
         console.log('Started the mocha execution')
-
-        browser.addCommand('clickMobile',function(selector1, selector2){
-            try{
-                selector1.click();
-            }
-            catch(error){
-                selector2.click();
-            }
-        });
     },
     /**
      * Hook that gets executed _after_ a hook within the suite ends (e.g. runs after calling
