@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+#reports
+report.json
+mochawesome-report/
+errorShots/
