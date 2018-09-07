@@ -1,37 +1,13 @@
 
-var username = 'awan@1800contacts.com';
-var authkey = 'u0e2547396b64173';
+var username = '';
+var authkey = '';
 
 exports.config = {
 
-    host: 'hub.crossbrowsertesting.com',
-    port: 80,
-    user: username,
-    key: authkey,
+    
     maxInstances :3,
     specs: [
         './src/specs/**/*.js'
-    ],
-    maxInstances: 3,
-    
-    capabilities: [
-        {
-            'browserName':'Chrome',
-            'version':'68x64',
-            'platform':'WIndows 10',
-            'screenResolution':'1366x768',
-            'recordVideo': 'true',
-            'name': 'WDIO - Chrome Test'
-        },
-       {
-            'browserName':'Safari',
-            'deviceName':'iPhone 7 Simulator',
-            'platformVersion':'10.0',
-            'platformName': 'iOS',
-            'deviceOrientation':'portrait',
-            'recordVideo': 'true',
-            'name': 'WDIO - iPhone Test'
-       } 
     ],
     //
     // ===================
@@ -98,7 +74,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: [],
+    services: ['selenium-standalone'],
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

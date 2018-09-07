@@ -1,4 +1,9 @@
 {
+  "files": [
+      "./specs/*.ts",
+      "./pages/*.ts",
+      "./helpers/*.ts",
+  ],
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
@@ -6,11 +11,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": true,
-    "noImplicitAny": false,
-    "outDir": "src/"
+    "noImplicitAny": false
   },
+  "compileOnSave": true,
   "exclude": [
     "node_modules"
-  ],
-  "compileOnSave": false
+  ]
 }
