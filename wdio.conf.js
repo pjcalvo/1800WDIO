@@ -45,7 +45,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'verbose',
+    logLevel: 'command',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -111,11 +111,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    reporters: ['dot','mochawesome'],
+    reporters: ['dot','mochawesome','junit'],
 
     reporterOptions:{
         outputDir:'./',
-        mochawesome_filename: 'report.json'
+        mochawesome_filename: 'report.json',
+        junit: {
+            outputDir: './test-reports/'
+        }
     },
     
     //
