@@ -2,6 +2,14 @@ var webdriver = require('gulp-webdriver');
 var gulp = require('gulp');
 var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
+var minimist = require('minimist');
+
+var knownOptions = {
+    string: 'baseUrl',
+    default: { baseUrl : 'https://development.1800contactstest.com' }
+  };
+  
+  var options = minimist(process.argv.slice(2), knownOptions);
 
 gulp.task("ts-compile", function () {
     return tsProject.src()
@@ -15,8 +23,9 @@ gulp.task('test:e2e', function() {
         capabilities : [
             {
                 'browserName':'chrome'
-            }
-        ]
+            }],
+        baseUrl : options.baseUrl
+        
     }));
 });
 
