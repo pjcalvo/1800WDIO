@@ -7,15 +7,20 @@ class Browser_Helper {
     }
 
     public clickElementWithLocators(locators){
-        locators.forEach(locator => {
+        locators.some(locator => {
             try{
-                browser.element(locator);
+                var elemento = browser.element(locator);
+                elemento.click();
+                return true;
             }
             catch (error){
-                console.log('No se pudo interactuar con el elemento: ' + locator)
+                console.log('No se pudo interactuar con el elemento: ' + locator);
+                return false;
             }
         });     
     }
+
+
 }
 
 const BrowserHelper = new Browser_Helper()
