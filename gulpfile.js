@@ -38,6 +38,7 @@ gulp.task('test:e2e-cbt', function() {
         user: 'awan@1800contacts.com',
         key : 'u0e2547396b64173',
         bail:3,
+        baseUrl : options.baseUrl,
         capabilities: [
             {
                 'browserName':'Chrome',
