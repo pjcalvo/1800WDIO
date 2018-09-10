@@ -6,13 +6,15 @@ class Browser_Helper {
         }
     }
 
-    public clickMobile(selector1, selector2){
-        try{
-            selector1.click();
-        }
-        catch{
-            selector2.click();
-        }
+    public clickElementWithLocators(locators){
+        locators.forEach(locator => {
+            try{
+                browser.element(locator);
+            }
+            catch (error){
+                console.log('No se pudo interactuar con el elemento: ' + locator)
+            }
+        });     
     }
 }
 
