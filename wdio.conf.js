@@ -4,11 +4,11 @@ exports.config = {
     specs: [
         './src/specs/**/*.js'
     ],
-    /*capabilities:[
+    capabilities:[
         {
             'browserName':"chrome"
         }
-    ],*/
+    ],
     //
     // ===================
     // Test Configurations

@@ -6,7 +6,7 @@ var minimist = require('minimist');
 
 var knownOptions = {
     string: 'baseUrl',
-    default: { baseUrl : 'https://development.1800contactstest.com' }
+    default: { baseUrl : 'https://blue.1800contactstest.com' }
   };
   
   var options = minimist(process.argv.slice(2), knownOptions);
