@@ -22,7 +22,10 @@ gulp.task('test:e2e', function() {
     return gulp.src('wdio.conf.js').pipe(webdriver({
         capabilities : [
             {
-                'browserName':'chrome'
+                'browserName':'chrome',
+                'chromeOptions':{
+                    args : ['headless', 'disable-gpu']
+                }
             }],
         baseUrl : options.baseUrl
         
