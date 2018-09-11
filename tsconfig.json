@@ -1,9 +1,4 @@
 {
-  "files": [
-      "./specs/*.ts",
-      "./pages/*.ts",
-      "./helpers/*.ts",
-  ],
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
@@ -11,7 +6,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "listEmittedFiles": true,
+    "outDir": "src/"
   },
   "compileOnSave": true,
   "exclude": [

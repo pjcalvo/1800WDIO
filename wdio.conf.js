@@ -1,14 +1,14 @@
-
-var username = '';
-var authkey = '';
-
 exports.config = {
-
     
     maxInstances :3,
     specs: [
         './src/specs/**/*.js'
     ],
+    /*capabilities:[
+        {
+            'browserName':"chrome"
+        }
+    ],*/
     //
     // ===================
     // Test Configurations
