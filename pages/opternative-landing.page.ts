@@ -1,7 +1,7 @@
 
 import BrowserHelper from '../helpers/browser.helper';
 
-class Opternative_Page {
+class Opternative_Landing_Page {
 
     public get btnContinue() { return {
         locators:[
@@ -13,9 +13,9 @@ class Opternative_Page {
         browser.url('/online-contact-lens-prescription') 
     }
     public submit(): void {
-        BrowserHelper.clickElementWithLocators(this.btnContinue.locators);
+        BrowserHelper.clickElementWithLocators(this.btnContinue);
     }
 
 }
-const OpternativePage = new Opternative_Page()
-export default OpternativePage
+const OpternativeLandingPage = new Opternative_Landing_Page()
+export default OpternativeLandingPage

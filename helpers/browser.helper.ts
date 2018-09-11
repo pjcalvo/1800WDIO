@@ -6,18 +6,24 @@ class Browser_Helper {
         }
     }
 
-    public clickElementWithLocators(locators){
-        locators.some(locator => {
+    public clickElementWithLocators(element){
+        var objectoOnScreen = this.findElementWithLocators(element);
+        objectoOnScreen.click();   
+    }
+
+    public findElementWithLocators(element){
+        var elemento;
+        
+        element.locators.some(locator => {
             try{
-                var elemento = browser.element(locator);
-                elemento.click();
+                elemento = browser.element(locator);
                 return true;
             }
             catch (error){
                 console.log('No se pudo interactuar con el elemento: ' + locator);
-                return false;
             }
-        });     
+        });   
+        return elemento;
     }
 
 
