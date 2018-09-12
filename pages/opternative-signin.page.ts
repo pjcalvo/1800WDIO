@@ -4,22 +4,18 @@ import DataHelper from '../helpers/data.helper';
 
 class Opternative_SignIn_Page {
 
-    public get pageLocator()     { return {locators:["//exam-sign-in"]}}
     public get firstName()       { return browser.element("[name='firstName']")}
     public get lastName()        { return browser.element("[name='lastName']")}
     public get emailAddress()    { return browser.element("[name='emailAddress']")}
     public get password()        { return browser.element("[name='password']")}
     public get passwordConfirm() { return browser.element("[name='confirmPassword']")}
+    public get form()            { return browser.element("[name='vm.createAccountForm']")}
 
     public isOnPage() {
-        var element = BrowserHelper.findElementWithLocators(this.pageLocator);
-        if (element)
-            return true;
-        else
-            return false;
+        return this.form.isVisible();
     }
 
-    public enterSignUpInformation(testUser?){
+    public enterSignUpInformation(testUser?) : void{
         if (testUser == undefined)
             testUser = DataHelper.getRandomUser();
 
@@ -29,7 +25,12 @@ class Opternative_SignIn_Page {
         this.password.setValue(testUser.password);
         this.passwordConfirm.setValue(testUser.password);
 
-        //this.form.submit;
+        this.submit();
+
+    }
+
+    public submit() : void {
+        this.form.submitForm()
     }
 
 }

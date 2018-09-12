@@ -40,18 +40,10 @@ gulp.task('test:e2e-cbt', function() {
         port: 80,
         user: 'awan@1800contacts.com',
         key : 'u0e2547396b64173',
-        bail:3,
+        bail:0,
         baseUrl : options.baseUrl,
         capabilities: [
             {
-                'browserName':'Chrome',
-                'version':'68x64',
-                'platform':'WIndows 10',
-                'screenResolution':'1280x1024',
-                'recordVideo': 'true',
-                'name': 'WDIO - Chrome Test'
-            },
-           {
                 'browserName':'Safari',
                 'deviceName':'iPhone 7 Simulator',
                 'platformVersion':'10.0',
@@ -59,7 +51,24 @@ gulp.task('test:e2e-cbt', function() {
                 'deviceOrientation':'portrait',
                 'recordVideo': 'true',
                 'name': 'WDIO - iPhone Test'
-           } 
+           },
+           {
+                'browserName':'Firefox',
+                'version':'62',
+                'platform':'WIndows 10',
+                'screenResolution':'1280x1024',
+                'recordVideo': 'true',
+                'name': 'WDIO - Firefox Test'
+            },
+            {
+                'browserName':'Chrome',
+                'deviceName':'Galaxy S6',
+                'platformVersion':'5.0',
+                'platformName': 'Android',
+                'deviceOrientation':'portrait',
+                'recordVideo': 'true',
+                'name': 'WDIO - Android Test'
+           }
         ],
 
     }));

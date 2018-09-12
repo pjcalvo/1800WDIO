@@ -1,12 +1,14 @@
 exports.config = {
     
-    maxInstances :3,
+    maxInstances :6,
     specs: [
         './src/specs/**/*.js'
     ],
     capabilities:[
         {
-            'browserName':"chrome"
+            'browserName':'Chrome',
+            'recordVideo': 'true',
+            'name': 'WDIO - Chrome Test'
         }
     ],
     //

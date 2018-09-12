@@ -17,7 +17,7 @@ class Browser_Helper {
         element.locators.some(locator => {
             try{
                 elemento = browser.element(locator);
-                return true;
+                return elemento.isVisible();
             }
             catch (error){
                 console.log('No se pudo interactuar con el elemento: ' + locator);
