@@ -11,7 +11,8 @@ class Opternative_Landing_Page {
 
     public open(): void {
         browser.url('/online-contact-lens-prescription') 
-    }
+    }   
+
     public submit(): void {
         BrowserHelper.clickElementWithLocators(this.btnContinue);
     }

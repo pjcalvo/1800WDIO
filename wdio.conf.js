@@ -4,13 +4,6 @@ exports.config = {
     specs: [
         './src/specs/**/*.js'
     ],
-    capabilities:[
-        {
-            'browserName':'Chrome',
-            'recordVideo': 'true',
-            'name': 'WDIO - Chrome Test'
-        }
-    ],
     //
     // ===================
     // Test Configurations

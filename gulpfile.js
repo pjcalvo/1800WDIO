@@ -22,10 +22,11 @@ gulp.task('test:e2e', function() {
     return gulp.src('wdio.conf.js').pipe(webdriver({
         capabilities : [
             {
-                'browserName':'chrome',
-                'chromeOptions':{
-                    args : ['headless', 'disable-gpu']
-                }
+                'browserName':'chrome'
+                //,
+                //'chromeOptions':{
+                //    args : ['headless', 'disable-gpu']
+               // }
             }],
         baseUrl : options.baseUrl
         
@@ -44,23 +45,6 @@ gulp.task('test:e2e-cbt', function() {
         baseUrl : options.baseUrl,
         capabilities: [
             {
-                'browserName':'Safari',
-                'deviceName':'iPhone 7 Simulator',
-                'platformVersion':'10.0',
-                'platformName': 'iOS',
-                'deviceOrientation':'portrait',
-                'recordVideo': 'true',
-                'name': 'WDIO - iPhone Test'
-           },
-           {
-                'browserName':'Firefox',
-                'version':'62',
-                'platform':'WIndows 10',
-                'screenResolution':'1280x1024',
-                'recordVideo': 'true',
-                'name': 'WDIO - Firefox Test'
-            },
-            {
                 'browserName':'Chrome',
                 'deviceName':'Galaxy S6',
                 'platformVersion':'5.0',
@@ -68,7 +52,25 @@ gulp.task('test:e2e-cbt', function() {
                 'deviceOrientation':'portrait',
                 'recordVideo': 'true',
                 'name': 'WDIO - Android Test'
+           },
+            {
+                'browserName':'Safari',
+                'deviceName':'iPhone 7 Simulator',
+                'platformVersion':'10.0',
+                'platformName': 'iOS',
+                'deviceOrientation':'portrait',
+                'recordVideo': 'true',
+                'name': 'WDIO - iPhone Test'
            }
+           ,
+           {
+                'browserName':'Firefox',
+                'version':'62',
+                'platform':'WIndows 10',
+                'screenResolution':'1280x1024',
+                'recordVideo': 'true',
+                'name': 'WDIO - Firefox Test'
+            }
         ],
 
     }));

@@ -50,7 +50,7 @@ suite('Opternative Flow as an NI', () => {
 
             var title = this.currentTest.title.replace(' ', '');
 
-            browser.saveScreenshot('./test-results/' + title + '.png');
+            //browser.saveScreenshot('./test-results/' + title + '.png');
             CBTHelper.setDescription(browser.sessionId,this.currentTest.fullTitle());
             CBTHelper.setScrore(browser.sessionId, this.currentTest.state);
         })

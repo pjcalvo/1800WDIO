@@ -1,5 +1,6 @@
 class Data_Helper {
 
+    //users
     public getRandomUser(){
         return {
             "firstName"         : "testacctFN",
@@ -33,6 +34,30 @@ class Data_Helper {
             "zipCode"       : "84004",
             "city"          : "Draper",
             "state"         : "UT" 
+        }
+    }
+   
+    //rx
+    public getRxBothEyesNoColor(){
+        return {
+            "product"      : {
+                    "name"  : "ACUVUE® OASYS®"
+                },
+            "patient"       :{
+                    "firstName"     : "pablotest",
+                    "lastName"      : "testAcct"
+            },
+            "rx":{
+                    "isSubmitAndSkip": false,
+                    "leftEye": {
+                        "power":"+0.50",
+                        "bc":"8.8"
+                    },
+                    "rightEye": {
+                        "power":"+0.50",
+                        "bc":"8.8"
+                    }
+            }
         }
     }
 }
