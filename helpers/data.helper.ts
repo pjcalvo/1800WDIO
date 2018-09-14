@@ -13,6 +13,19 @@ class Data_Helper {
         }
     }
 
+    public getPrivateLabelUser(){
+        return {
+            "firstName"         : "plFirstName",
+            "lastName"          : "testAcct",
+            "emailAddress"      : this.getRandomEmail(),
+            "password"          : "123456",
+            "dateOfBirth"       :"01011989",
+            "state"             : "IL",
+            "paymentInformation": this.getAmexPaymentInformation(),
+            "rx"                : this.getPrivateLabelQualifierProduct()
+        }
+    }
+
     private getRandomEmail(){
         var text;
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -56,6 +69,29 @@ class Data_Helper {
                     "rightEye": {
                         "power":"+0.50",
                         "bc":"8.8"
+                    }
+            }
+        }
+    }
+
+    public getPrivateLabelQualifierProduct(){
+        return {
+            "product"      : {
+                    "name"          : "Biofinity",
+                    "searchCriteria": "Biofinity"
+                },
+            "patient"       :{
+                    "firstName"     : "pablotest",
+                    "lastName"      : "testAcct"
+            },
+            "rx":{
+                    "isSubmitAndSkip": false,
+                    "isPrivateLabel" : true,
+                    "leftEye": {
+                        "power":"+0.50"
+                    },
+                    "rightEye": {
+                        "power":"+0.50"
                     }
             }
         }

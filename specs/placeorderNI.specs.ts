@@ -8,7 +8,7 @@ import Interstitial from '../pages/interstitial.page'
 import ParametersPage from '../pages/parameters.page'
 
 
-suite('Place an order as an NI', () => {
+suite.skip('Place an order as an NI', () => {
 
         let testUser;
         let testRx;

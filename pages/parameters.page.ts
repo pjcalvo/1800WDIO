@@ -19,7 +19,7 @@ class Parameters_Page {
 
         if (!rx.isSubmitAndSkip){
             
-            this.enterManually.click();
+            if (!rx.isPrivateLabel) this.enterManually.click();
 
             if (rx.leftEye.power != undefined) this.leftEyePower.selectByVisibleText(rx.leftEye.power)
             if (rx.leftEye.bc != undefined) this.leftEyeBC.selectByVisibleText(rx.leftEye.bc)

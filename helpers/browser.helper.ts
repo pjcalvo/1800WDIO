@@ -25,8 +25,6 @@ class Browser_Helper {
         });   
         return elemento;
     }
-
-
 }
 
 const BrowserHelper = new Browser_Helper()

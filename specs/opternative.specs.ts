@@ -7,7 +7,7 @@ import CBTHelper from '../helpers/cbt.helper'
 import DataHelper from '../helpers/data.helper';
 
 
-suite('Opternative Flow as an NI', () => {
+suite.skip('Opternative Flow as an NI', () => {
 
         let testUser;
 
