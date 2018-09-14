@@ -3,7 +3,7 @@ import DataHelper from '../helpers/data.helper';
 class Parameters_Page {
 
     get form()           { return $(".parameters-form")}
-    get pageLocator()    { return $(".RxDetails")}
+    get pageLocator()    { return $(".ParameterEntry")}
     get leftEyePower()   { return browser.element("[name='power-Left']")}
     get leftEyeBC()      { return browser.element("[name='baseCurve-Left']")}
     get rightEyePower()  { return browser.element("[name='power-Right']")}
@@ -11,7 +11,7 @@ class Parameters_Page {
     get enterManually()  { return browser.element("//button[@data-selenium-id='btnEnterManually']")}
 
     public isOnPage(){
-        this.pageLocator.waitForExist(10000)
+        this.pageLocator.waitForExist(15000)
         return this.pageLocator.isVisible()
     }
 

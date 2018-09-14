@@ -33,7 +33,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'command',
+    logLevel: 'silent',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -112,7 +112,7 @@ exports.config = {
     reporters: ['dot','mochawesome','junit'],
 
     reporterOptions:{
-        outputDir:'./report-file',
+        outputDir:'./test-reports/',
         mochawesome_filename: 'report.json'
        /* ,
         junit: {
@@ -184,14 +184,12 @@ exports.config = {
      * beforeEach in Mocha)
      */
      beforeHook: function () {
-        console.log('Started the mocha execution')
     },
     /**
      * Hook that gets executed _after_ a hook within the suite ends (e.g. runs after calling
      * afterEach in Mocha)
      */
      afterHook: function () {
-        console.log('Finished the mocha execution')
      },
     /**
      * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) ends.

@@ -1,13 +1,16 @@
 var expect = require('chai').expect
 import PLQualification from '../pages/private-label/qualification.page'
 import PLBrandSelection from '../pages/private-label/brand-selection.page'
+import ParametersPage from '../pages/parameters.page'
 import CBTHelper from '../helpers/cbt.helper'
-import DataHelper from '../helpers/data.helper';
+import DataHelper from '../helpers/data.helper'
+import VisualHelper from '../helpers/visual-validation.helper'
 
 
-suite('Opternative Flow as an NI', () => {
+suite('Private Label Flow as an NI', () => {
 
         let testUser;
+        let visualResult;
 
         suiteSetup (function(){
             testUser = DataHelper.getPrivateLabelUser();
@@ -18,7 +21,7 @@ suite('Opternative Flow as an NI', () => {
 
             PLQualification.startFlow()
             expect(PLQualification.isOnPage()).to.be.true;
-            browser.checkDocument();
+            expect(VisualHelper.isVisuallyEqual()).to.be.true;
         })
 
         test('Users are able to qualify and continue the flow', function(){
@@ -26,18 +29,25 @@ suite('Opternative Flow as an NI', () => {
             PLQualification.enterQualificationInformation(testUser)
             PLQualification.submit()
             expect(PLBrandSelection.isOnPage()).to.be.ture;
+            expect(VisualHelper.isVisuallyEqual()).to.be.true;
 
         })
 
         test('Users are able to choose the brand and continue the flow', function(){
 
-            PLBrandSelection.searchProduct(testUser.rx.product)
-            browser.checkDocument();
+            PLBrandSelection.searchProduct(testUser.rx.product)         
+            expect(VisualHelper.isVisuallyEqual()).to.be.true;
+
             PLBrandSelection.submit()
+            expect(ParametersPage.isOnPage()).to.be.ture;
 
         })
 
+        test('Users are able to enter the parametrs for the RX continue the flow', function(){
 
+            ParametersPage.enterParametersInformation(testUser.rx.rx);
+            
+        })
 
         teardown(function(){
 
