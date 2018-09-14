@@ -14,5 +14,5 @@ steps:
 
 - script: |
     npm install
-    gulp default --gulpfile gulpfile.js
+    gulp test-cbt --baseUrl https://blue.1800contacts.com
   displayName: 'npm install and run gulp'
