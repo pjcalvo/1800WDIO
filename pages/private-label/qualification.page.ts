@@ -8,7 +8,7 @@ class Private_Label_Qualification_Page {
     public get bntContinue()     { return browser.element("//div[text()='Continue']")}
 
     public startFlow () : void {
-        browser.url('/?orderNo=0030393964&token=d4b53b4a-f93f-414e-b656-a51dd8a12a9a');
+        browser.url('/?orderNo=0030394395&token=0a215d03-dbd0-40f1-ac61-b4a7dd14bd6f');
     }
     
     public isOnPage() {

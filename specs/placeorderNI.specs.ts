@@ -6,9 +6,10 @@ import ProductListPage from '../pages/plp.page'
 import ProductPage from '../pages/pdp.page'
 import Interstitial from '../pages/interstitial.page'
 import ParametersPage from '../pages/parameters.page'
+import PatientPage from '../pages/patient.page'
 
 
-suite.skip('Place an order as an NI', () => {
+suite('Place an order as an NI', () => {
 
         let testUser;
         let testRx;
@@ -33,15 +34,20 @@ suite.skip('Place an order as an NI', () => {
         test('Users are able to continue on the Product Page', function(){
 
             ProductPage.submit()
-            expect(ParametersPage.isOnPage()).to.be.true
 
         })
 
         test('Users are able to enter the RX Parameters', function(){
 
             ParametersPage.enterParametersInformation(testRx.rx)
-            
+            expect(PatientPage.isOnPage()).to.be.true;
+    
+        })
 
+        test('Users are able to enter Patient Information', function(){
+
+            PatientPage.enterPatientInformation(testRx.patient)
+    
         })
 
         teardown(function(){

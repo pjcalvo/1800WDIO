@@ -39,14 +39,14 @@ exports.config = {
     coloredLogs: true,
     //
     // Warns when a deprecated command is used
-    deprecationWarnings: true,
+    deprecationWarnings: false,
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
     bail: 0,
     //
     // Saves a screenshot to a given path if a command fails.
-    //screenshotPath: './errorShots/',
+    screenshotPath: './errorShots/',
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
