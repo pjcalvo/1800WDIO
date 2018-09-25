@@ -7,7 +7,7 @@ class Data_Helper {
             "lastName"          : "testAcct",
             "emailAddress"      : this.getRandomEmail(),
             "password"          : "123456",
-            "dateOfBirth"       :"01011989",
+            "dateOfBirth"       : "01011989",
             "state"             : "UT",
             "paymentInformation": this.getAmexPaymentInformation()
         }
@@ -46,7 +46,8 @@ class Data_Helper {
             "address2"      : "Test Address 2",
             "zipCode"       : "84004",
             "city"          : "Draper",
-            "state"         : "UT" 
+            "state"         : "UT",
+            "phoneNumber"   : "3456789012"
         }
     }
    
@@ -70,7 +71,8 @@ class Data_Helper {
                         "power":"+0.50",
                         "bc":"8.8"
                     }
-            }
+            },
+            "doctor": this.getTestDoctor()
         }
     }
 
@@ -94,6 +96,13 @@ class Data_Helper {
                         "power":"+0.50"
                     }
             }
+        }
+    }
+
+    public getTestDoctor() {
+        return {
+            "name":"test",
+            "location": "Utah"
         }
     }
 }

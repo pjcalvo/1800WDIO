@@ -7,7 +7,6 @@
     "experimentalDecorators": true,
     "removeComments": true,
     "noImplicitAny": false,
-    "listEmittedFiles": true,
     "outDir": "src/"
   },
   "compileOnSave": true,

@@ -7,7 +7,7 @@ import DataHelper from '../helpers/data.helper'
 import VisualHelper from '../helpers/visual-validation.helper'
 
 
-suite.skip('Private Label Flow as an NI', () => {
+suite('Private Label Flow as an NI', () => {
 
         let testUser;
         let visualResult;

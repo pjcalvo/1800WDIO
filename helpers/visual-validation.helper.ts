@@ -1,7 +1,7 @@
 class Visual_Regression_Helper {
 
     public isVisuallyEqual(){
-        let visualResult = browser.checkDocument()[0];
+        let visualResult = (browser as any).checkDocument()[0];
         return visualResult.isWithinMisMatchTolerance;
     }
 }

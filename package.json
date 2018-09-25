@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/rimraf/bin.js errorShots && node ./node_modules/typescript/lib/tsc.js && node ./node_modules/webdriverio/bin/wdio && node ./node_modules/rimraf/bin.js src",
-    "generateMochawesome": "marge report.json --reportTitle '1800Contacts Automation Restults'"
+    "generateMochawesome": "marge ./test-reports/report.json --reportTitle '1800Contacts Automation Restults'"
   },
   "engines": {
     "node": "10.10.0",

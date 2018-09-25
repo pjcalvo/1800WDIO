@@ -6,7 +6,10 @@ var minimist = require('minimist');
 
 var knownOptions = {
     string: 'baseUrl',
-    default: { baseUrl : 'https://blue.1800contactstest.com' }
+    string: 'suite',
+    default: { 
+        baseUrl : 'https://blue.1800contactstest.com',
+        suite: 'placeOrder,opternative,privateLabel' }
   };
   
   var options = minimist(process.argv.slice(2), knownOptions);
@@ -28,7 +31,8 @@ gulp.task('test:e2e', function() {
                 //    args : ['headless', 'disable-gpu']
                // }
             }],
-        baseUrl : options.baseUrl
+        baseUrl : options.baseUrl,
+        suite: options.suite
         
     }));
 });
@@ -43,6 +47,7 @@ gulp.task('test:e2e-cbt', function() {
         key : 'u0e2547396b64173',
         bail:0,
         baseUrl : options.baseUrl,
+        suite: options.suite,
         capabilities: [
             {
                 'browserName':'Chrome',
